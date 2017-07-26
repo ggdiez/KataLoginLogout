@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  LogoutViewController.swift
 //  KataLoginLogOut
 //
 //  Created by Gonzalo Gonzalez  on 26/7/17.
@@ -8,18 +8,31 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LogoutViewController: UIViewController {
+
+    @IBOutlet var logoutButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.showLogout()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    func showLogout () {
+        self.logoutButton.isEnabled = true
+    }
+    
+    @IBAction func logOutButtonTapped () {
+        let apiClient = ApliClient()
+        
+        if apiClient.logout() {
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
 }
 
