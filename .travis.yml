@@ -5,4 +5,4 @@ before_install:
   - gem install xcpretty
 
 script:
-  - set -o pipefail && xcodebuild -project KataLoginLogOut.xcodeproj -scheme 'KataLoginLogOut' build test | xcpretty -c
+  - set -o pipefail && xcodebuild -project KataLoginLogOut.xcodeproj -scheme 'KataLoginLogOut' build test CODE_SIGN_IDENTITY=- | xcpretty -c
