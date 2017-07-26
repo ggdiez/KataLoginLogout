@@ -44,7 +44,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
     }
     
     @IBAction func logInButtonTapped () {
-        let apiClient = ApliClient()
+        let apiClient = ApliClient(clock: Clock())
         
         if apiClient.login(email: self.emailTextField.text!, password: self.passwordTextField.text!) {
             self.showLogOut()

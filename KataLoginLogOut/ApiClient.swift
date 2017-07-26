@@ -10,15 +10,40 @@ import Foundation
 
 class ApliClient {
     
+    private let clock: Clock
+    
+    init(clock: Clock) {
+        self.clock = clock
+    }
+    
     func login (email: String, password: String) -> Bool {
         return email == "pedro@karumi.com" && password == "123456"
     }
     
     func logout () -> Bool {
-        let date = Date()
-        let seconds: Int = Int(date.timeIntervalSince1970 / 1000 )
+        let seconds = clock.currentTime
         let result = seconds  % 2
-        
         return result == 0
+    }
+}
+
+class Clock {
+    
+    var currentTime: Int {
+        let now = Date().timeIntervalSince1970
+        return Int(now / 1000 )
+    }
+}
+
+class MockClock : Clock {
+    
+    let fixedTime: Int
+    
+    init(fixedTime: Int) {
+        self.fixedTime = fixedTime
+    }
+    
+    override var currentTime: Int {
+        return fixedTime
     }
 }

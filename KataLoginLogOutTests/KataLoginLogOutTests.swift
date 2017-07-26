@@ -22,7 +22,7 @@ class KataLoginLogOutTests: XCTestCase {
     }
     
     func testShouldReturnTrueIfEmailAndPasswordIsOK () {
-        let apiClient = ApliClient()
+        let apiClient = ApliClient(clock: Clock())
         
         let result = apiClient.login(email: "pedro@karumi.com", password: "123456")
         
@@ -30,7 +30,7 @@ class KataLoginLogOutTests: XCTestCase {
     }
     
     func testShouldReturnFalseIfEmailWrongAndPasswordIsOK () {
-        let apiClient = ApliClient()
+        let apiClient = ApliClient(clock: Clock())
         
         let result = apiClient.login(email: "pedroche@karumi.com", password: "123456")
         
@@ -38,7 +38,7 @@ class KataLoginLogOutTests: XCTestCase {
     }
     
     func testShouldReturnFalseIfEmailWrongAndPasswordIsFalse () {
-        let apiClient = ApliClient()
+        let apiClient = ApliClient(clock: Clock())
         
         let result = apiClient.login(email: "pedroche@karumi.com", password: "123")
         
@@ -46,9 +46,25 @@ class KataLoginLogOutTests: XCTestCase {
     }
     
     func testShouldReturnFalseIfEmailIsOKAndPasswordIsFalse () {
-        let apiClient = ApliClient()
+        let apiClient = ApliClient(clock: Clock())
         
         let result = apiClient.login(email: "pedro@karumi.com", password: "123")
+        
+        XCTAssertEqual(false, result)
+    }
+    
+    func testShouldReturnOkIfLogOutIsWithOkTime () {
+        let apiClient = ApliClient(clock: MockClock(fixedTime: 2000))
+        
+        let result = apiClient.logout()
+        
+        XCTAssertEqual(true, result)
+    }
+    
+    func testShouldReturnFalseIfLogOutIsWithWrongTime () {
+        let apiClient = ApliClient(clock: MockClock(fixedTime: 2001))
+        
+        let result = apiClient.logout()
         
         XCTAssertEqual(false, result)
     }

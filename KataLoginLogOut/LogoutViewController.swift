@@ -28,10 +28,10 @@ class LogoutViewController: UIViewController {
     }
     
     @IBAction func logOutButtonTapped () {
-        let apiClient = ApliClient()
+        let apiClient = ApliClient(clock: Clock())
         
         if apiClient.logout() {
-            self.dismiss(animated: true, completion: nil)
+            self.dismiss(animated: false, completion: nil)
         }
     }
 }
