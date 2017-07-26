@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BC6CAF201F28D27F0034821E /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6CAF1F1F28D27F0034821E /* ApiClient.swift */; };
+		BC6CAF211F28DA240034821E /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6CAF1F1F28D27F0034821E /* ApiClient.swift */; };
 		BC97D6961F28AEF000BEB979 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC97D6951F28AEF000BEB979 /* AppDelegate.swift */; };
 		BC97D6981F28AEF000BEB979 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC97D6971F28AEF000BEB979 /* LoginViewController.swift */; };
 		BC97D69B1F28AEF000BEB979 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC97D6991F28AEF000BEB979 /* Main.storyboard */; };
@@ -280,6 +281,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC97D6AB1F28AEF000BEB979 /* KataLoginLogOutTests.swift in Sources */,
+				BC6CAF211F28DA240034821E /* ApiClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

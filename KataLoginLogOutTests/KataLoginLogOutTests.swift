@@ -21,9 +21,36 @@ class KataLoginLogOutTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testShouldReturnTrueIfEmailAndPasswordIsOK () {
+        let apiClient = ApliClient()
+        
+        let result = apiClient.login(email: "pedro@karumi.com", password: "123456")
+        
+        XCTAssertEqual(true, result)
+    }
+    
+    func testShouldReturnFalseIfEmailWrongAndPasswordIsOK () {
+        let apiClient = ApliClient()
+        
+        let result = apiClient.login(email: "pedroche@karumi.com", password: "123456")
+        
+        XCTAssertEqual(false, result)
+    }
+    
+    func testShouldReturnFalseIfEmailWrongAndPasswordIsFalse () {
+        let apiClient = ApliClient()
+        
+        let result = apiClient.login(email: "pedroche@karumi.com", password: "123")
+        
+        XCTAssertEqual(false, result)
+    }
+    
+    func testShouldReturnFalseIfEmailIsOKAndPasswordIsFalse () {
+        let apiClient = ApliClient()
+        
+        let result = apiClient.login(email: "pedro@karumi.com", password: "123")
+        
+        XCTAssertEqual(false, result)
     }
     
     func testPerformanceExample() {
