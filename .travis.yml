@@ -2,7 +2,7 @@ language: swift
 osx_image: xcode8 
 
 before_install:
-	- gem install xcpretty
+  - gem install xcpretty
 
 script:
-	-set -o pipefail && xcodebuild -project KataLoginLogOut.xcodeproj -scheme 'KataLoginLogOut' build test | xcpretty -c
+  -set -o pipefail && xcodebuild -project KataLoginLogOut.xcodeproj -scheme 'KataLoginLogOut' build test | xcpretty -c
