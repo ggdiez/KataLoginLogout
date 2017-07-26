@@ -1,4 +1,0 @@
-language: objective-c
-xcode_project: KataLoginLogOut.xcodeproj
-xcode_scheme: KataLoginLogOut
-
