@@ -1,8 +1,4 @@
 language: objective-c
-osx_image: xcode8.2
+xcode_project: KataLoginLogOut.xcodeproj
+xcode_scheme: KataLoginLogOut
 
-before_install:
-  - gem install xcpretty
-
-script:
-  - set -o pipefail && xcodebuild -project KataLoginLogOut.xcodeproj -scheme 'KataLoginLogOut' build test | xcpretty -c
