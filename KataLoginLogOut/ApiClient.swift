@@ -27,6 +27,19 @@ class ApliClient {
     }
 }
 
+class MockApliClient: ApliClient {
+    
+    private var failOnLogIn = false
+    
+    public func setFailOnLogIn(failOnLogIn: Bool) {
+        self.failOnLogIn = failOnLogIn
+    }
+    
+    override func login(email: String, password: String) -> Bool {
+        return !self.failOnLogIn
+    }
+}
+
 class Clock {
     
     var currentTime: Int {

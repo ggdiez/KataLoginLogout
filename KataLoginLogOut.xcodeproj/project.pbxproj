@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC2FAE031F28E58D003B561A /* LogInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2FAE021F28E58D003B561A /* LogInPresenter.swift */; };
+		BC2FAE041F28E58D003B561A /* LogInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2FAE021F28E58D003B561A /* LogInPresenter.swift */; };
+		BC2FAE061F28E66C003B561A /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2FAE051F28E66C003B561A /* LogInView.swift */; };
+		BC2FAE071F28E66C003B561A /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2FAE051F28E66C003B561A /* LogInView.swift */; };
 		BC6CAF201F28D27F0034821E /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6CAF1F1F28D27F0034821E /* ApiClient.swift */; };
 		BC6CAF211F28DA240034821E /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6CAF1F1F28D27F0034821E /* ApiClient.swift */; };
 		BC97D6961F28AEF000BEB979 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC97D6951F28AEF000BEB979 /* AppDelegate.swift */; };
@@ -37,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BC2FAE021F28E58D003B561A /* LogInPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInPresenter.swift; sourceTree = "<group>"; };
+		BC2FAE051F28E66C003B561A /* LogInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 		BC6CAF1F1F28D27F0034821E /* ApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		BC97D6921F28AEEF00BEB979 /* KataLoginLogOut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KataLoginLogOut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC97D6951F28AEF000BEB979 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +116,8 @@
 				BC97D69E1F28AEF000BEB979 /* LaunchScreen.storyboard */,
 				BC97D6A11F28AEF000BEB979 /* Info.plist */,
 				BC6CAF1F1F28D27F0034821E /* ApiClient.swift */,
+				BC2FAE021F28E58D003B561A /* LogInPresenter.swift */,
+				BC2FAE051F28E66C003B561A /* LogInView.swift */,
 			);
 			path = KataLoginLogOut;
 			sourceTree = "<group>";
@@ -269,8 +277,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC2FAE061F28E66C003B561A /* LogInView.swift in Sources */,
 				BC97D6981F28AEF000BEB979 /* LoginViewController.swift in Sources */,
 				BCFF98EC1F28D09E0075F54E /* LogoutViewController.swift in Sources */,
+				BC2FAE031F28E58D003B561A /* LogInPresenter.swift in Sources */,
 				BC97D6961F28AEF000BEB979 /* AppDelegate.swift in Sources */,
 				BC6CAF201F28D27F0034821E /* ApiClient.swift in Sources */,
 			);
@@ -282,6 +292,8 @@
 			files = (
 				BC97D6AB1F28AEF000BEB979 /* KataLoginLogOutTests.swift in Sources */,
 				BC6CAF211F28DA240034821E /* ApiClient.swift in Sources */,
+				BC2FAE071F28E66C003B561A /* LogInView.swift in Sources */,
+				BC2FAE041F28E58D003B561A /* LogInPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

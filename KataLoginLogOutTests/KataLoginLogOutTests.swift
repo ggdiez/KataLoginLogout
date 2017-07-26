@@ -69,6 +69,17 @@ class KataLoginLogOutTests: XCTestCase {
         XCTAssertEqual(false, result)
     }
     
+    func testShouldReturnOkIfUserEnterTheCorrectValues () {
+        let mockApliClient = MockApliClient(clock: MockClock(fixedTime: 2000))
+        let mockLoginView = MockLogInView()
+        
+        let logInPresenter = LogInPresenter(apliClient: mockApliClient, loginView: mockLoginView)
+        
+        logInPresenter.login(email: "pedro@karumi.com", password: "123456")
+        
+        XCTAssertEqual(true, mockLoginView.getSomeoneInvokedShowLogOutView())
+    }
+    
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {

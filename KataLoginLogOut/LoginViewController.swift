@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController, UITextFieldDelegate{
+class LoginViewController: UIViewController, LogInView, UITextFieldDelegate{
     
     @IBOutlet var emailTextField :UITextField!
     @IBOutlet var passwordTextField :UITextField!
@@ -46,11 +46,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
     @IBAction func logInButtonTapped () {
         let apiClient = ApliClient(clock: Clock())
         
-        if apiClient.login(email: self.emailTextField.text!, password: self.passwordTextField.text!) {
-            self.showLogOut()
-        } else {
-            self.showLoginError()
-        }
+        let logInPresenter: LogInPresenter = LogInPresenter(apliClient: apiClient, loginView: self)
+        
+        logInPresenter.login(email: self.emailTextField.text!, password: self.passwordTextField.text!)
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
